@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+font-size: 62.5%;
+
+--bg-body-color: #000000;
+
+--bg-button-color:#065E7C;
+--bg-button-color-click: #FFFFFF;
+
+--input-color: #06181C;
+
+/* table */
+--bg-header-table: #092D38;
+--bg-list-color: #06161B;
+--bg-list-color-2: #06181C;
+
+/* text colors */
+--text-color: #E1E1E6;
+--text-color-button-click: #065E7C;
+--text-remove-color: #F75A68;
+}
+
+body, input, button {
+  font-size: 1.6rem; 
+  line-height: 2rem;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+body { 
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid red;
+  
+
+  background-color: var(--bg-body-color);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 112.0rem;
+  height: 4.8rem;
+  
+  border: 1px solid red;
+}
+
+header .search {
+  display: flex;
+  gap: .8rem;
+}
+
+header .search input {
+  width: 46.2rem;
+  height: 4.8rem;
+
+  background-color: var(--input-color);
+  border: none;
+
+  padding: 1.6rem;
+  gap: 1rem;
+  border-radius: .5rem;
+
+  color: var(--text-color);
+}
+
+header .search button {
+  width: 17.0rem;
+  height: 4.8rem;
+  border-radius: .5rem;
+
+  background-color: var(--bg-button-color);
+  text-transform: uppercase;
+  color: var(--text-color);
+  font-weight: bold;
+}
