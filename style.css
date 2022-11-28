@@ -16,7 +16,7 @@ font-size: 62.5%;
 
 /* table */
 --bg-header-table: #092D38;
---bg-list-color: #06161B;
+--bg-list-color: rgba(6, 22, 27, 0.5);
 --bg-list-color-2: #06181C;
 
 /* text colors */
@@ -81,6 +81,7 @@ header .search input {
 
 header .search input:focus {
   outline: 1px solid var(--text-color-button-click);
+  caret-color: var(--text-color-button-click);
 }
 
 header .search button {
@@ -121,9 +122,88 @@ header .search button:active svg path{
 }
 
 
-table thead{
-  position: absolute;
-  margin-top: 9.6rem;
+table{
+  width: 100%;
+  margin-top: 8.7rem;
   color: var(--text-color);
-  border: 2px solid red;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 160%;
 }
+
+table thead {
+  height: 6.4rem;
+  border-left: none;
+
+  
+  align-items: flex-start;
+ 
+
+
+
+  background-color: var(--bg-header-table);
+}
+
+table thead th:nth-child(1) {
+  width: 50.4rem;
+}
+
+table tbody td {
+  padding-left: 4rem;
+}
+
+table tr td.user {
+  display: flex;
+  align-items: center;
+  height: 10.4rem;
+}
+
+table tr td img {
+  width: 5.6rem;
+  height: 5.6rem;
+
+  border-radius: 3rem;
+}
+
+table tr td.user a{
+text-decoration: none;
+color: var(--text-color);
+
+margin-left: 1.6rem;
+}
+
+table tr td.user a span{
+color: #e1e1e6b5;
+font-weight: 400;
+}
+
+table tr td .remove {
+  color: var(--text-remove-color);
+  border: none;
+  background: none;
+
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 160%;
+
+  transition: all .3s;
+}
+
+table tr td .remove:hover {
+  cursor: pointer;
+  color: #f75a678b;
+
+  transform: scale(0.97);
+}
+
+/* para pegar todas as coluna pares e aplicar isso */
+table tr:nth-child(even) {
+  background: var(--bg-list-color-2);
+}
+
+/* para pegar todas as coluna ímpares e aplicar isso */
+table tr:nth-child(odd) {
+    background:var(--bg-list-color);
+  }
