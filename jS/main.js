@@ -1,5 +1,3 @@
-import { FavoritesView } from './favorites.js'
+import { FavoritesViews } from './favorites.js'
 
-const a = new FavoritesView('#app')
-
-a.createRow()
+new FavoritesViews('#app')
