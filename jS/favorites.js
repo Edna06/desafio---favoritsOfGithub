@@ -3,6 +3,7 @@
 class Favorites {
   constructor(root) {
     this.root = document.querySelector(root)
+
     this.load()
   }
 
@@ -21,6 +22,15 @@ class Favorites {
         followers: '190000'
       }
     ]
+  }
+
+  
+  delete(user) {
+const filteredEntries = this.entries
+.filter(entry => entry.login !== user.login)
+  
+  console.log(filteredEntries)
+
   }
 }
 
@@ -47,6 +57,15 @@ export class FavoritesViews extends Favorites {
       row.querySelector('span').textContent = user.login
       row.querySelector('.repositories').textContent = user.public_repos
       row.querySelector('.followers').textContent = user.followers
+
+     
+      row.querySelector('.remove').onclick = () => {
+        const isOk = confirm('tem certeza que deseja remover o usuário?')
+      
+        if(isOk == true) {
+          this.delete(user)
+        }
+      }
 
       this.tbody.append(row)
     })
