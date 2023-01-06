@@ -1,6 +1,26 @@
-// classe que vai conter a lógica dos dados (responsável por fazer a lógica dos dados ou guardar os dados)
+// classe que vai conter o API 
+export class GithubUser {
+  static search(username) {
+    const endpoint = `https://api.github.com/users/${username}`
 
-class Favorites {
+
+    // vou retornar o carinha que vai buscar coisas para mim na url, em qualquer endpoint que eu colocar 
+    return fetch(endpoint)
+    .then( data => data.json()
+    .then ( data => ({
+      login: data.login,
+      name: data.name,
+      public_repos: data.public_repos,
+      followers: data.followers
+    }))
+    // quando encontrar o meu dado quero que transforme ele em JSON
+    )
+  }
+}
+
+
+// classe que vai conter a lógica dos dados (responsável por fazer a lógica dos dados ou guardar os dados)
+export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root)
 
@@ -10,6 +30,14 @@ class Favorites {
   load() {
     this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || []
 
+  }
+
+  
+  async add(username) {
+    const user = await GithubUser.search(username) 
+
+    console.log(user)
+    console.log('teste')
   }
 
   
@@ -32,7 +60,20 @@ export class FavoritesViews extends Favorites {
     this.tbody = this.root.querySelector('table tbody')
 
     this.update()
+    this.onadd()
   }
+
+  onadd() {
+    const addButton = this.root.querySelector('.search button')
+    addButton.onclick = () => {
+      
+      const {value} = this.root.querySelector('.search input')
+
+      
+      this.add(value)
+    }
+  }
+
 
   update() {
     this.removeAllTr()
