@@ -125,6 +125,10 @@ header .search button:active svg path{
 table{
   border-collapse: collapse;
 
+
+  border: .1rem solid #4A808C;
+  border-radius: .12rem;
+
   width: 100%;
   margin-top: 8.7rem;
   color: var(--text-color);
@@ -151,6 +155,7 @@ table thead th:nth-child(1) {
 
 table tbody td {
   padding-left: 4rem;
+  border-bottom: .1rem solid #4A808C;
 }
 
 table tr td.user {
@@ -214,5 +219,3 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
     background:var(--bg-list-color);
   }
-
-  
